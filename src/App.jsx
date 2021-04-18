@@ -1,6 +1,7 @@
 import React from 'react';
 import { Select, DatePicker } from 'antd';
 import moment from "moment";
+import env from "react-dotenv";
 
 import 'antd/dist/antd.css'
 import './App.css';
@@ -24,7 +25,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:8000/availableCurrencies')
+    fetch(env.CBR_COURSE_VIEWER_BACKEND_DOMAIN + '/availableCurrencies')
       .then((response) => {
         return response.json();
       })
@@ -43,7 +44,7 @@ class App extends React.Component {
       isLoading: true,
     }, () => {
       fetch(
-        'http://localhost:8000/course/'
+        env.CBR_COURSE_VIEWER_BACKEND_DOMAIN + '/course/'
         + this.state.targetCurrency +'/'
         + this.state.baseCurrency + '/'
         + this.state.date.format('YYYY-MM-DD')
