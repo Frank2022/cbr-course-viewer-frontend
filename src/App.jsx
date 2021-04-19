@@ -18,6 +18,9 @@ class App extends React.Component {
       baseCurrency: 'RUR',
       date: moment(),
       course: null,
+      courseDiff: null,
+      previousTradeDay: null,
+      tradeDay: null,
       isReady: false,
       isLoading: false,
       error: null,
@@ -55,6 +58,9 @@ class App extends React.Component {
         .then((data) => {
           this.setState({
             course: data.course || null,
+            courseDiff: data.courseDiff || null,
+            previousTradeDay: data.previousTradeDay || null,
+            tradeDay: data.tradeDay || null,
             error: data.error || null,
             isLoading: false,
           })
@@ -123,6 +129,10 @@ class App extends React.Component {
         ) : (
           <div className="result">
             1 {this.state.targetCurrency} = {this.state.course || 'X'} {this.state.baseCurrency}
+            <div className="sub-result">
+              Course on {this.state.tradeDay} <br/>
+              Diff from {this.state.previousTradeDay}: <span>{this.state.courseDiff} {this.state.baseCurrency}</span>
+            </div>
           </div>
         )}
       </div>

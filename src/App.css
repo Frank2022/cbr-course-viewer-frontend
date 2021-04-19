@@ -49,6 +49,15 @@
   color: #333;
 }
 
+.app .result .sub-result {
+  font-size: 14px;
+  color: #999;
+}
+
+.app .result .sub-result span {
+  color: #333;
+}
+
 .app.loading .result {
   opacity: 0.2;
 }
