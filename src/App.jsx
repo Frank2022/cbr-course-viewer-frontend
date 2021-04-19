@@ -114,7 +114,7 @@ class App extends React.Component {
               allowClear={false}
               size="large"
               disabledDate={(current) => {
-                return current && (current > moment().endOf('day') || current < moment('1992-02-01'));
+                return current && (current > moment().endOf('day') || current < moment('1992-07-03'));
               }}
               onChange={(date) => {
                 this.setState({ date }, () => {
