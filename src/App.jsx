@@ -90,8 +90,6 @@ class App extends React.Component {
                 value={currency}
               >
                 {currency}
-                {currency === 'RUR' ? (<small>since 1994</small>) : ''}
-                {currency === 'RUB' ? (<small>since 2001</small>) : ''}
               </Option>
             );
           })}
